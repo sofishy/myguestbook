@@ -1,7 +1,14 @@
 {
   "version": 2,
+  "public": true,
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/backend/api/main.js" },
+    { "source": "/api/(.*)", "destination": "/backend/api/index.ts" },
     { "source": "/(.*)", "destination": "/frontend/dist/$1" }
-  ]
+  ],
+  "functions": {
+    "backend/api/index.ts": {
+      "runtime": "@vercel/node",
+      "memory": 1024
+    }
+  }
 }
